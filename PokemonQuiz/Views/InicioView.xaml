@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PokemonQuiz.Views.InicioView"
+             Title="Inicio">
+    <VerticalStackLayout>
+        <Label Text="Quiz " FontSize="20"></Label>
+        <Image Source="pokemonportada.png"></Image>
+        <Button Text="Iniciar"></Button>
+        <Label Text="Desarrollado por: Kevin Gael Reyes Mendoza"></Label>
+    </VerticalStackLayout>
+</ContentPage>

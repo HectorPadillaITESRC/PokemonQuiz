@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="PokemonQuiz.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PokemonQuiz"
+    Shell.FlyoutBehavior="Disabled"
+    Title="PokemonQuiz"
+    xmlns:views="clr-namespace:PokemonQuiz.Views"
+    
+    Shell.NavBarIsVisible="False">
+
+    <ShellContent
+        Title="Inicio"
+        ContentTemplate="{DataTemplate views:InicioView}"
+        Route="MainPage" />
+
+</Shell>
