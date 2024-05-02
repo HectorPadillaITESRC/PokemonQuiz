@@ -56,6 +56,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\PikachuTriste.png" />
+	  <None Remove="Resources\Images\pikachutrofeo.jpg" />
+	  <None Remove="Resources\Images\pikachutrofeo.png" />
 	  <None Remove="Resources\Images\PokemonPortada.png" />
 	  <None Remove="Resources\raw\pokemon.json" />
 	</ItemGroup>
@@ -76,6 +79,12 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Views\InicioView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\QuizView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ResultadosView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

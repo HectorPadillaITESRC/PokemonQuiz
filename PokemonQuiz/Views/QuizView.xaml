@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PokemonQuiz.Views.QuizView"
+             Title="QuizView"
+             Background="DarkRed">
+    <VerticalStackLayout Margin="20">
+        <Label TextColor="White" FontFamily="TimesNewRoman" Margin="5" HorizontalOptions="EndAndExpand" Text="Vidas: 💛💛💛" FontSize=" 20"></Label>
+        <Image WidthRequest="500" Margin="10" Source="pokemonportada.png"></Image>
+        <Label TextColor="White" FontFamily="TimesNewRoman" FontSize="40" HorizontalOptions="CenterAndExpand" Text="¿Quién es ese pokémon?"></Label>
+        <Button BackgroundColor="Gold" TextColor="Black" Margin="20,50,20,10" Text="Opcion 1"></Button>
+        <Button BackgroundColor="Gold" TextColor="Black" Margin="20,5,20,10" Text="Opcion 2"></Button>
+        <Button BackgroundColor="Gold" TextColor="Black" Margin="20,5,20,10" Text="Opcion 3"></Button>
+        <Button BackgroundColor="Gold" TextColor="Black" Margin="20,5,20,10" Text="Opcion 4"></Button>
+    </VerticalStackLayout>
+</ContentPage>

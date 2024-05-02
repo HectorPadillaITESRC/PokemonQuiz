@@ -9,7 +9,14 @@
     xmlns:views="clr-namespace:PokemonQuiz.Views"
     
     Shell.NavBarIsVisible="False">
-
+    <ShellContent
+        Title="Resultados"
+        ContentTemplate="{DataTemplate views:ResultadosView}"
+        Route="Resultados" />
+    <ShellContent
+    Title="Juego"
+    ContentTemplate="{DataTemplate views:QuizView}"
+    Route="Juego" />
     <ShellContent
         Title="Inicio"
         ContentTemplate="{DataTemplate views:InicioView}"
