@@ -4,7 +4,12 @@
              x:Class="PokemonQuiz.Views.ResultadosView"
              Title="ResultadosView" BackgroundColor="DarkRed">
     <VerticalStackLayout>
-        <Image WidthRequest="300" Source="pikachutrofeo.jpg"></Image>
-        <
+        <Border BackgroundColor="#fff836" HeightRequest="400" StrokeThickness="3" Margin="10">
+            <Image Aspect="AspectFill" Source="pikachutrofeo.png"></Image>
+        </Border>
+        <Label HorizontalTextAlignment="Center" TextColor="Gold" Text="Felicidades Lograste Adivinar 150/150 Pokemons"
+               FontSize="30" Margin="0,0,0,40"></Label>
+        <Image HeightRequest="150" Source="pokebolatresestrellas.png"></Image>
+        <Button TextColor="Black" BorderWidth="5" BorderColor="Gold" BackgroundColor="Yellow" Margin="0,50,0,0" WidthRequest="200" Text="Volver a Jugar"></Button>
     </VerticalStackLayout>
 </ContentPage>

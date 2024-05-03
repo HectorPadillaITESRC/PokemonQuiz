@@ -7,8 +7,15 @@
     Shell.FlyoutBehavior="Disabled"
     Title="PokemonQuiz"
     xmlns:views="clr-namespace:PokemonQuiz.Views"
-    
+    xmlns:viewsmodels="clr-namespace:PokemonQuiz.ViewModels"
     Shell.NavBarIsVisible="False">
+    <Shell.BindingContext>
+        <viewsmodels:QuizViewModel></viewsmodels:QuizViewModel>
+    </Shell.BindingContext>
+    <ShellContent
+       Title="Inicio"
+       ContentTemplate="{DataTemplate views:InicioView}"
+       Route="inicio" />
     <ShellContent
         Title="Resultados"
         ContentTemplate="{DataTemplate views:ResultadosView}"
@@ -17,9 +24,6 @@
     Title="Juego"
     ContentTemplate="{DataTemplate views:QuizView}"
     Route="Juego" />
-    <ShellContent
-        Title="Inicio"
-        ContentTemplate="{DataTemplate views:InicioView}"
-        Route="MainPage" />
+ 
 
 </Shell>
