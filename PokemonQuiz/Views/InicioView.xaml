@@ -4,11 +4,12 @@
              x:Class="PokemonQuiz.Views.InicioView"
              Title="Inicio"
              BackgroundColor="CornflowerBlue">
-    <VerticalStackLayout>
-        <Image Margin="30, 30, 30, 0" Source="https://sg.portal-pokemon.com/play/resources/pokedex/img/quiz/title.png">
+    <Grid RowDefinitions="0.6*, 0.5*, 0.1*, 0.3*">
+        
+        <Image  Grid.Row ="0" Margin="30, 30, 30, 0" Source="https://sg.portal-pokemon.com/play/resources/pokedex/img/quiz/title.png">
         </Image>
-        <Image Source="https://i.pinimg.com/originals/43/ed/d5/43edd5aa5f0de7f410f5e38326f4b94c.png" Margin="30,10,30,40"></Image>
-        <Button Command="{Binding IniciarJuegoCommand}" TextColor="Black" Text="Iniciar" BackgroundColor="Gold" BorderColor="DarkBlue" BorderWidth="1" WidthRequest="250"></Button>
-        <Label TextColor="Azure" Text="Desarrollado por: Carlos Emiliano García Leal" FontSize="Body" HorizontalTextAlignment="Center" Margin="0,30,0,0"></Label>
-    </VerticalStackLayout>
+        <Image Grid.Row ="1" Source="https://i.pinimg.com/originals/43/ed/d5/43edd5aa5f0de7f410f5e38326f4b94c.png" Margin="30,10,30,40"></Image>
+        <Button Grid.Row ="2" Command="{Binding IniciarJuegoCommand}" TextColor="Black" Text="Iniciar" BackgroundColor="Gold" BorderColor="DarkBlue" BorderWidth="1" WidthRequest="250"></Button>
+        <Label Grid.Row ="3" VerticalOptions="End" TextColor="Azure" Text="Desarrollado por: Carlos Emiliano García Leal" FontSize="Body" HorizontalTextAlignment="Center" Margin="0,30,0,10"></Label>
+    </Grid>
 </ContentPage>

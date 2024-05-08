@@ -9,8 +9,8 @@ namespace PokemonQuiz.Models
     public class PokemonModel
     {
 
-        public int Numero { get; set; }
-        public string Nombre { get; set; } = "";
-        public string Imagen { get; set; } = "";
+        public int numero { get; set; }
+        public string nombre { get; set; } = "";
+        public string imagen { get; set; } = "";
     }
 }
