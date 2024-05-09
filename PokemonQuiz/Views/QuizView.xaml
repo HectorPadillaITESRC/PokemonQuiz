@@ -5,21 +5,22 @@
              Title="QuizView"
              Background="DarkRed"
              xmlns:viewmodels="clr-namespace:PokemonQuiz.ViewModels"
+             x:Name="pantallaJuego"
              x:DataType="viewmodels:QuizViewModel"
              >
     
     <Grid RowDefinitions="auto, 0.45*, auto, auto, 0.4*" Margin="20">
         <Label Grid.Row="0" TextColor="White" FontFamily="TimesNewRoman" Margin="5" 
-               HorizontalOptions="EndAndExpand" Text="Vidas: 💛💛💛" FontSize=" 20"></Label>
+               HorizontalOptions="EndAndExpand" Text="{Binding Vidas}" FontSize=" 20"></Label>
         <Image Grid.Row="1" MaximumHeightRequest="400" WidthRequest="500" Margin="10" Source="{Binding Pregunta.Pregunta}"></Image>
-        <ProgressBar ScaleY="5" Grid.Row="3" VerticalOptions="Fill" Progress="0.2"  ProgressColor="Gold" Margin="30" BackgroundColor="Red"></ProgressBar>
+        <ProgressBar Progress="{Binding Progreso}" ScaleY="5" Grid.Row="3" VerticalOptions="Fill"  ProgressColor="Gold" Margin="30" BackgroundColor="Red"></ProgressBar>
         <Label Grid.Row="2" TextColor="White" FontFamily="TimesNewRoman" FontSize="40"
                HorizontalOptions="CenterAndExpand" Text="¿Quién es ese pokémon?"></Label>
         <VerticalStackLayout Grid.Row="4" BindableLayout.ItemsSource="{Binding Pregunta.Distractores}">
             <BindableLayout.ItemTemplate>
                 <DataTemplate>
                     
-                    <Button   BackgroundColor="Gold" TextColor="Black" Margin="20,5,20,10" 
+                    <Button Command="{Binding Source = {x:Reference pantallaJuego}, Path = BindingContext.VerificarRespuestaCommand}" CommandParameter="{Binding .}"  BackgroundColor="Gold" TextColor="Black" Margin="20,5,20,10" 
         Text="{Binding .}"></Button>
                 </DataTemplate>
             </BindableLayout.ItemTemplate>

@@ -21,14 +21,15 @@ namespace PokemonQuiz.ViewModels
             get
             {
                 if (vidas == 3)
-                    return "💛💛💛";
+                    return " Vidas: 💛💛💛";
                 else if (vidas == 2)
-                    return "💛💛";
+                    return "Vidas: 💛💛";
                 else
-                    return "💛";
+                    return "Vidas: 💛";
             }
         }
-        public byte Aciertos { get; set; }
+        public byte Aciertos => (byte)(150 - Pokemones.Count);
+        public double Progreso => Aciertos/150f;
         private PokemonModel pokemonSeleccionado;
         private Random r = new();
         public PreguntaModel Pregunta { get; set; } = new();
@@ -49,9 +50,12 @@ namespace PokemonQuiz.ViewModels
             if(respuesta == pokemonSeleccionado.nombre)
             {
                 Pokemones.Remove(pokemonSeleccionado);
+                PropertyChanged?.Invoke(this, new(nameof(Progreso)));
                 if(Pokemones.Count == 0)
                 {
                     Shell.Current.GoToAsync("//Resultados");
+                    PropertyChanged?.Invoke(this, new(nameof(Aciertos)));
+                    return;
                 }
                 CrearPregunta();
             }
@@ -61,6 +65,7 @@ namespace PokemonQuiz.ViewModels
                 if(vidas == 0)
                 {
                     Shell.Current.GoToAsync("//Resultados");
+                    PropertyChanged?.Invoke(this, new(nameof(Aciertos)));
                     return;
                 }
                 PropertyChanged?.Invoke(this, new(nameof(Vidas)));
@@ -73,10 +78,11 @@ namespace PokemonQuiz.ViewModels
             
             Pokemones.Clear();
             Pokemones.AddRange(Distractores);
-            Shell.Current.GoToAsync("//Juego");
             CrearPregunta();
             vidas = 3;
             PropertyChanged?.Invoke(this, new(nameof(Vidas)));
+            PropertyChanged?.Invoke(this, new(nameof(Progreso)));
+            Shell.Current.GoToAsync("//Juego");
         }
         private void CrearPregunta()
         {

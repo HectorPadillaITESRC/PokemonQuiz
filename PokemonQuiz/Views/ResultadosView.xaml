@@ -8,8 +8,16 @@
             <Image Aspect="AspectFill" Source="pikachutrofeo.png"></Image>
         </Border>
         <Label HorizontalTextAlignment="Center" TextColor="Gold" Text="Felicidades Lograste Adivinar 150/150 Pokemons"
-               FontSize="30" Margin="0,0,0,40"></Label>
+               FontSize="30" Margin="0,0,0,40">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Felicidades Lograste Adivinar: "></Span>
+                    <Span Text="{Binding Aciertos}"></Span>
+                    <Span Text="/150 Pokemons"></Span>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
         <Image HeightRequest="150" Source="pokebolatresestrellas.png"></Image>
-        <Button TextColor="Black" BorderWidth="5" BorderColor="Gold" BackgroundColor="Yellow" Margin="0,50,0,0" WidthRequest="200" Text="Volver a Jugar"></Button>
+        <Button Command="{Binding IniciarJuegoCommand}" TextColor="Black" BorderWidth="5" BorderColor="Gold" BackgroundColor="Yellow" Margin="0,50,0,0" WidthRequest="200" Text="Volver a Jugar"></Button>
     </VerticalStackLayout>
 </ContentPage>
